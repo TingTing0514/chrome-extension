@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Vue Chrome Extension",
+  "version": "1.0",
+  "description": "A Chrome extension built with Vue and Vite",
+  "permissions": ["activeTab","storage","scripting"],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/React16.png",
+      "32": "assets/React32.png",
+      "64": "assets/React64.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "assets/React16.png",
+    "32": "assets/React32.png",
+    "64": "assets/React64.png"
+  }
+}
