@@ -3,14 +3,28 @@
   "name": "Vue Chrome Extension",
   "version": "1.0",
   "description": "A Chrome extension built with Vue and Vite",
-  "permissions": ["activeTab","storage","scripting"],
+  "permissions": [    
+    "activeTab",
+    "storage",
+    "scripting",
+    "sidePanel",
+    "tabs",
+    "tabCapture",
+    "downloads"
+  ],
+    "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
-    "default_popup": "src/popup.html",
+    "default_popup": "src/popup/popup.html",
     "default_icon": {
       "16": "assets/icon16.png",
       "32": "assets/icon32.png",
       "64": "assets/icon64.png"
     }
+  },
+  "side_panel":{
+    "default_path": "src/sidebar/sidebar.html"
   },
   "background": {
     "service_worker": "background.js"

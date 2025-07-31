@@ -1,4 +1,3 @@
-import React from "react";
 import './popup.css'
 
 import { useState, useEffect } from 'react';
@@ -32,7 +31,7 @@ function App() {
   return (
     <div className="popup-container">
       <h1>React Chrome Extension</h1>
-      <p>这是一个使用 React 构建的 Chrome 插件</p>
+      <p>这是一个使用 React 构建的 Chrome 插件sss</p>
       <button onClick={sendMessageToContent}>与页面交互</button>
       {pageTitle && <p>当前页面标题: {pageTitle}</p>}
     </div>

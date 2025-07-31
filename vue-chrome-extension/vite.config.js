@@ -10,9 +10,10 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        popup: path.resolve(__dirname, 'src/popup.html'),
+        popup: path.resolve(__dirname, 'src/popup/popup.html'),
         background: path.resolve(__dirname, 'src/background.js'),
-        content: path.resolve(__dirname, 'src/content.js')
+        content: path.resolve(__dirname, 'src/content.js'),
+        sidebar: path.resolve(__dirname, 'src/sidebar/sidebar.html')
       },
       output: {
         entryFileNames: (chunkInfo) => {
