@@ -37,7 +37,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (chrome.runtime.lastError) {
         console.log("截图失败", chrome.runtime.lastError);
       } else {
-        console.log("截图成功,转发给 content script");
         chrome.downloads.download(
           {
             url: dataUrl,
