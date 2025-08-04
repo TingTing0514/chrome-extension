@@ -33,17 +33,17 @@ const getCode = async () => {
 }
 const screenShot = async () => {
   // 第一种写法
-    // chrome.tabs.captureVisibleTab(null, { format: "png" }, (dataUrl) => {
-    //   if (chrome.runtime.lastError) {
-    //     console.error(chrome.runtime.lastError.message);
-    //   } else {
-    //     chrome.downloads.download({
-    //       url: dataUrl,
-    //       filename: "screenshot.png"
-    //     });
-    //     alert("截图已保存！");
-    //   }
-    // });
+    chrome.tabs.captureVisibleTab(null, { format: "png" }, (dataUrl) => {
+      if (chrome.runtime.lastError) {
+        console.error(chrome.runtime.lastError.message);
+      } else {
+        chrome.downloads.download({
+          url: dataUrl,
+          filename: "screenshot.png"
+        });
+        alert("截图已保存！");
+      }
+    });
     // 第二种写法
     const [tab] = await chrome.tabs.query({
       active: true,
